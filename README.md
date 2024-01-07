@@ -12,3 +12,8 @@ graph TD
     C["Aozora Bunko File Format?"] -->| | D
     D["Publish to Aozora Bunko?"]
 ```
+
+## Related Projects
+- [kyukyunyorituryo/AozoraEditor: 青空文庫エディタ](https://github.com/gearsns/AozoraJavaScriptParser)
+- [kyukyunyorituryo/html2aozora](https://github.com/kyukyunyorituryo/html2aozora)
+- [gearsns/AozoraJavaScriptParser](https://github.com/gearsns/AozoraJavaScriptParser)
