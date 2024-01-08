@@ -14,7 +14,7 @@ graph TD
 ```
 1. Use Existing Aozora Bunko Files as Training Data
     - We can find original texts since Aozora Bunko shows the original version of the texts ("底本").
-    - Supervised learning w Those data
+    - Supervised learning with these data
 
 ## This Project consists of...
 
