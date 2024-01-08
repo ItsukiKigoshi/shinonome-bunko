@@ -35,7 +35,7 @@ graph TD
 
 - [aozorahack](https://github.com/aozorahack)
   - [Web Page](https://aozorahack.org)
-  - [ideathon](https://github.com/aozorahack/ideathon): There are many simillar ideas as this project!
+  - [ideathon](https://github.com/aozorahack/ideathon): There are many ideas similar to this project!
   - [kosakuin](https://github.com/aozorahack/kosakuin): Aozora Bunko Editor (MIT License)
   - [aozora-cli](https://github.com/aozorahack/aozora-cli): Aozora Bunko CLI (MIT License)
   - [aozora-parser.js](https://github.com/aozorahack/aozora-parser.js)
