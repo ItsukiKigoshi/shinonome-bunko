@@ -5,17 +5,16 @@ from PIL import Image
 # Get relative path
 __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
 
-# Recognise text from python_import_this.png
-str_img = Image.open(os.path.join(__location__,'images/python_import_this.png'))
-str = pytesseract.image_to_string(str_img, lang="eng")
-print(str)
 
-# Recognise text from amenimo_makezu.jpg
-str_jp_img = Image.open(os.path.join(__location__,'images/amenimo_makezu.jpg'))
-str_jp = pytesseract.image_to_string(str_jp_img, lang="jpn")
-print(str_jp)
 
-# Recognise text from discours_de_la_methode.png
-str_jp_vert_img = Image.open(os.path.join(__location__,'images/discours_de_la_methode.png'))
-str_jp_vert = pytesseract.image_to_string(str_jp_vert_img, lang="jpn_vert")
-print(str_jp_vert)
+# Generalised function to recognise text from image
+def recognise_text(img_path, lang, title):
+    print(f"{__location__}/images/{img_path}")
+    img = Image.open(f"{__location__}/images/{img_path}")
+    str = pytesseract.image_to_string(img, lang=lang)
+    with open(f"{__location__}/out/{title}.txt", "w") as text_file:
+        print(str, file=text_file)
+        
+recognise_text('python_import_this.png', 'eng', 'str')
+recognise_text('amenimo_makezu.jpg', 'jpn', 'str_jp')
+recognise_text('discours_de_la_methode.png', 'jpn_vert', 'str_jp_vert')
