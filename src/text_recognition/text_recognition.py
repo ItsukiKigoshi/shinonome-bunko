@@ -5,8 +5,6 @@ from PIL import Image
 # Get relative path
 __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
 
-
-
 # Generalised function to recognise text from image
 def recognise_text(img_path, lang, title):
     print(f"{__location__}/images/{img_path}")
