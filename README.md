@@ -12,6 +12,8 @@ graph TD
     C["Aozora Bunko File Format?"] -->| | D
     D["Publish to Aozora Bunko?"]
 ```
+1. Use Existing Aozora Bunko Files as Training Data
+    - We can find original texts since Aozora Bunko shows the original version of the texts ("底本").
 
 ## This Project consists of...
 
