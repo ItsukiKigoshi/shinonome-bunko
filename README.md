@@ -17,10 +17,10 @@ graph TD
 
 1. Text Recognition
    - OCR with Python
-   - Aim to generate texts accurately and quickly even in Japanese vertical texts
+   - Aim to generate texts accurately and quickly also in Japanese vertical texts
 1. Viewer/Editor
    - Simple and Fast Viewer and Editor working on Browser
-   - Anyone can modify the generated texts either in Built-in Editor or GitHub (Can we compare the original pictures and the generated texts?)
+   - Anyone can modify the generated texts either in the Built-in Editor or GitHub (Can we compare the original pictures and the generated texts?)
    - Can this editor be built with Python as well?
 1. Text Matching Game
    - Matching Game for Japanese Texts
