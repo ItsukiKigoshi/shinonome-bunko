@@ -7,7 +7,7 @@
 ```mermaid
 graph TD
     A[Images of Books] -->|OCR| B
-    B["Text File \n (MD? XML?)"] -->|"Parser? (Should I do this?)"| C
+    B["Text File \n (MD? XML?; \n UTF-8? Shift-JIS?)"] -->|"Parser? (Should I do this?)"| C
     B --> |"Iterate + Modify by Human \n (Editor in Browser or Git; cf. Wiki, Qiita, Zenn)"| B
     C["Aozora Bunko File Format?"] -->| | D
     D["Publish to Aozora Bunko?"]
