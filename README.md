@@ -29,7 +29,14 @@ graph TD
    - cf. Google Captcha
 
 ## Related Projects
+
 - [aozorahack](https://github.com/aozorahack)
+  - [Web Page](https://aozorahack.org)
+  - [ideathon](https://github.com/aozorahack/ideathon): There are many simillar ideas as this project!
+  - [kosakuin](https://github.com/aozorahack/kosakuin): Aozora Bunko Editor (MIT License)
+  - [aozora-cli](https://github.com/aozorahack/aozora-cli): Aozora Bunko CLI (MIT License)
+  - [aozora-parser.js](https://github.com/aozorahack/aozora-parser.js)
+  - [aozoraflow](https://github.com/aozorahack/aozoraflow)
 - [kyukyunyorituryo/AozoraEditor: 青空文庫エディタ](https://github.com/gearsns/AozoraJavaScriptParser)
 - [kyukyunyorituryo/html2aozora](https://github.com/kyukyunyorituryo/html2aozora)
 - [gearsns/AozoraJavaScriptParser](https://github.com/gearsns/AozoraJavaScriptParser)
