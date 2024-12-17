@@ -40,6 +40,6 @@ graph TD
   - [aozora-cli](https://github.com/aozorahack/aozora-cli): Aozora Bunko CLI (MIT License)
   - [aozora-parser.js](https://github.com/aozorahack/aozora-parser.js)
   - [aozoraflow](https://github.com/aozorahack/aozoraflow)
-- [kyukyunyorituryo/AozoraEditor: 青空文庫エディタ](https://github.com/gearsns/AozoraJavaScriptParser)
+- [kyukyunyorituryo/AozoraEditor: 青空文庫エディタ](https://github.com/kyukyunyorituryo/AozoraEditor)
 - [kyukyunyorituryo/html2aozora](https://github.com/kyukyunyorituryo/html2aozora)
 - [gearsns/AozoraJavaScriptParser](https://github.com/gearsns/AozoraJavaScriptParser)
