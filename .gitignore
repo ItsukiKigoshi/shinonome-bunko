@@ -1,3 +1,4 @@
 *.jpg
 *.png
 src/text_recognition/out/*
+src/resource
