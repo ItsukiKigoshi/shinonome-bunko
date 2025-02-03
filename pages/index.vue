@@ -15,14 +15,17 @@ const items = [
       <v-main>
         <v-container>
           <v-row>
-            <h1>東雲文庫: What a easy development with Nuxt!!</h1>
+            <h1>東雲文庫</h1>
           </v-row>
           <v-row>
             <v-col cols="6">
               Here are the Photos of Books
+              <!--              <MiradorViewer/>-->
             </v-col>
             <v-col cols="6">
               <form>
+                <v-text-field label="DOI" model-value="10.11501/1823865" readonly></v-text-field>
+                <v-text-field label="Title" model-value="蝸牛考 (言語誌叢刊)" readonly></v-text-field>
                 <v-select
                     :items="items"
                     label="Branch"

@@ -12,9 +12,10 @@ graph TD
     C["Aozora Bunko File Format?"] -->| | D
     D["Publish to Aozora Bunko?"]
 ```
+
 1. Use Existing Aozora Bunko Files as Training Data
-    - We can find original texts since Aozora Bunko shows the original version of the texts ("底本").
-    - Supervised learning with these data
+   - We can find original texts since Aozora Bunko shows the original version of the texts ("底本").
+   - Supervised learning with these data
 
 ## This Project consists of...
 
@@ -43,3 +44,81 @@ graph TD
 - [kyukyunyorituryo/AozoraEditor: 青空文庫エディタ](https://github.com/kyukyunyorituryo/AozoraEditor)
 - [kyukyunyorituryo/html2aozora](https://github.com/kyukyunyorituryo/html2aozora)
 - [gearsns/AozoraJavaScriptParser](https://github.com/gearsns/AozoraJavaScriptParser)
+
+---
+
+# Nuxt Minimal Starter
+
+Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+
+## Setup
+
+Make sure to install dependencies:
+
+```bash
+# npm
+npm install
+
+# pnpm
+pnpm install
+
+# yarn
+yarn install
+
+# bun
+bun install
+```
+
+## Development Server
+
+Start the development server on `http://localhost:3000`:
+
+```bash
+# npm
+npm run dev
+
+# pnpm
+pnpm dev
+
+# yarn
+yarn dev
+
+# bun
+bun run dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+# npm
+npm run build
+
+# pnpm
+pnpm build
+
+# yarn
+yarn build
+
+# bun
+bun run build
+```
+
+Locally preview production build:
+
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
