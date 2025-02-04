@@ -1,33 +1,37 @@
 {
-  "name": "nuxt-app",
+  "name": "shinonome-bunko",
+  "version": "0.1.0",
   "private": true,
-  "type": "module",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@mdi/font": "^7.4.47",
-    "@nuxt/content": "^3.0.1",
-    "@nuxtjs/axios": "^5.13.6",
-    "@types/react": "^19.0.8",
-    "@types/react-dom": "^19.0.3",
-    "core-js": "^3.40.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@fontsource/roboto": "^5.1.1",
+    "@mui/material": "^6.4.2",
+    "@mui/material-nextjs": "^6.4.2",
     "mirador": "^3.4.3",
-    "mirador-image-tools": "^0.11.0",
-    "nuxt": "^3.15.2",
+    "next": "15.1.6",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "tesseract.js": "^6.0.0",
-    "vue": "latest",
-    "vue-router": "latest"
+    "react-dom": "^19.0.0"
   },
-  "packageManager": "yarn@1.22.19",
   "devDependencies": {
-    "vite-plugin-vuetify": "^2.0.4",
-    "vuetify": "^3.7.9"
-  }
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.6",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  },
+  "main": "index.js",
+  "repository": "https://github.com/ItsukiKigoshi/shinonome-bunko.git",
+  "author": "ItsukiKigoshi <itsukikigoshi@gmail.com>",
+  "license": "MIT"
 }
