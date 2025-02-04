@@ -1,9 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import vuetify, { transformAssetUrls } from "vite-plugin-vuetify";
 export default defineNuxtConfig({
-  app: {
-    baseURL: process.env.NUXT_APP_BASE_URL || "/",
-  },
   build: {
     transpile: ["vuetify"],
   },
@@ -17,7 +14,6 @@ export default defineNuxtConfig({
       });
     },
   ],
-  ssr: false, // GitHub Pages is for static sites
   vite: {
     vue: {
       template: {
