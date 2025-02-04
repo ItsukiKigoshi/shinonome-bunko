@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: "20"
       # Pick your own package manager and build script
-      - run: npm install
+      - run: yarn install
       - run: npx nuxt build --preset github_pages
         env:
           NUXT_APP_BASE_URL: /shinonome-bunko/
