@@ -22,6 +22,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tesseract.js": "^6.0.0",
+    "tify": "^0.31.0",
     "vue": "latest",
     "vue-router": "latest"
   },

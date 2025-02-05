@@ -11,6 +11,11 @@ const items = [
     <v-app>
       <v-app-bar>
         <v-app-bar-title>東雲文庫/Shinonome Bunko</v-app-bar-title>
+        <v-btn
+        href="https://github.com/itsukikigoshi/shinonome-bunko"
+        icon="mdi-github"
+        target="_blank"
+        ></v-btn>
       </v-app-bar>
       <v-main>
         <v-container>
@@ -19,8 +24,7 @@ const items = [
           </v-row>
           <v-row>
             <v-col cols="6">
-              Here are the Photos of Books
-              <!--              <MiradorViewer/>-->
+              <Tify />
             </v-col>
             <v-col cols="6">
               <form>
