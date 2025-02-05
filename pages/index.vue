@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <script setup>
 const items = ["Item 1", "Item 2", "Item 3", "Item 4"];
 </script>
@@ -41,6 +42,9 @@ const items = ["Item 1", "Item 2", "Item 3", "Item 4"];
 </template>
 =======
 <template>
+=======
+<template>
+>>>>>>> 5c8dc4baae80a32f5d54227a2314017c73dc5ffd
   <v-container>
     <ul>
       <li v-for="(item, key) in items" :key="key">
@@ -67,4 +71,7 @@ export default {
   },
 }
 </script>
+<<<<<<< HEAD
+>>>>>>> 5c8dc4baae80a32f5d54227a2314017c73dc5ffd
+=======
 >>>>>>> 5c8dc4baae80a32f5d54227a2314017c73dc5ffd
