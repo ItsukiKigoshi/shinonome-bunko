@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "shinonome-bunko",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -36,5 +36,9 @@
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-vue": "^7.12.1",
     "prettier": "^2.3.2"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/ItsukiKigoshi/shinonome-bunko.git",
+  "author": "ItsukiKigoshi <itsukikigoshi@gmail.com>",
+  "license": "MIT"
 }
