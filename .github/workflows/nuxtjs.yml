@@ -1,43 +1,32 @@
-# https://github.com/actions/deploy-pages#usage
-name: Deploy to GitHub Pages
-on:
-  workflow_dispatch:
-  push:
-    branches:
-      - main
+name: Deploy to Github Pages
+
+on: [push, pull_request]
+
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  cd:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [14]
+
     steps:
-      - uses: actions/checkout@v4
-      - run: corepack enable
-      - uses: actions/setup-node@v4
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Setup node env
+        uses: actions/setup-node@v2.1.2
+
         with:
-          node-version: '20'
-      # Pick your own package manager and build script
-      - run: yarn install
-      - run: npx nuxt build --preset github_pages
-        env:
-          NUXT_APP_BASE_URL: /shinonome-bunko/
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./.output/public
-  # Deployment job
-  deploy:
-    # Add a dependency to the build job
-    needs: build
-    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
-    permissions:
-      pages: write # to deploy to Pages
-      id-token: write # to verify the deployment originates from an appropriate source
-    # Deploy to the github_pages environment
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    # Specify runner + deployment step
-    runs-on: ubuntu-latest
-    steps:
+          node-version: ${{ matrix.node }}
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Generate
+        run: yarn generate
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
