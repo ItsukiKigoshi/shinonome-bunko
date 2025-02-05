@@ -1,3 +1,4 @@
+# https://github.com/actions/deploy-pages#usage
 name: Deploy to GitHub Pages
 on:
   workflow_dispatch:
@@ -14,8 +15,10 @@ jobs:
         with:
           node-version: '20'
       # Pick your own package manager and build script
-      - run: npm install
+      - run: yarn install
       - run: npx nuxt build --preset github_pages
+        env:
+          NUXT_APP_BASE_URL: /shinonome-bunko/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -30,7 +33,7 @@ jobs:
       id-token: write # to verify the deployment originates from an appropriate source
     # Deploy to the github_pages environment
     environment:
-      name: github_pages
+      name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     # Specify runner + deployment step
     runs-on: ubuntu-latest
