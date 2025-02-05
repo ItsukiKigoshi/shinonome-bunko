@@ -1,45 +1,29 @@
 <script>
-import Mirador from "mirador/dist/es/src/index";
-import { miradorImageToolsPlugin } from "mirador-image-tools";
+import Mirador from 'mirador/dist/es/src/index'
+import {miradorImageToolsPlugin} from 'mirador-image-tools'
 
-let miradorInstance;
+let miradorInstance
 
 export default {
-  async asyncData({ $axios }) {
+  async asyncData({$axios}) {
     // 取得先のURL
-    const url = "https://www.dl.ndl.go.jp/api/iiif/1823865/manifest.json";
+    const url = 'https://www.dl.ndl.go.jp/api/iiif/1823865/manifest.json'
     // リクエスト（Get）
-    const response = await $axios.$get(url);
-
-    // Canvas一覧の取得
-    const canvases = [];
-    for (const canvas of response.sequences[0].canvases) {
-      canvases.push({
-        text: canvas.label,
-        value: canvas["@id"],
-      });
-    }
-
-    return {
-      label: response.label,
-      metadata: response.metadata,
-      manifestId: response["@id"],
-      canvases,
-    };
+    const response = await $axios.$get(url)
   },
   data() {
     return {
-      canvas: "",
-    };
+      canvas: '',
+    }
   },
 
   computed: {
     miradorViewerOptions() {
       return {
-        id: "mirador",
+        id: 'mirador',
         windows: [
           {
-            id: "known-window-id",
+            id: 'known-window-id',
             manifestId: this.manifestId,
           },
         ],
@@ -52,27 +36,27 @@ export default {
         workspaceControlPanel: {
           enabled: false,
         },
-      };
+      }
     },
   },
 
   watch: {
     canvas() {
       // We create the action first. Note we are using a specified `windowId` here. This could be accessed from the store instead of specifying upfront.
-      const action = Mirador.actions.setCanvas("known-window-id", this.canvas);
+      const action = Mirador.actions.setCanvas('known-window-id', this.canvas)
       // Now we can dispatch it.
-      miradorInstance.store.dispatch(action);
+      miradorInstance.store.dispatch(action)
     },
   },
 
   mounted() {
     miradorInstance = Mirador.viewer(this.miradorViewerOptions, [
       ...miradorImageToolsPlugin,
-    ]);
+    ])
   },
 
   beforeDestroy() {
-    miradorInstance.unmount();
+    miradorInstance.unmount()
   },
 
   methods: {
@@ -83,22 +67,22 @@ export default {
         y: 1831,
         width: 800,
         height: 1195,
-      };
+      }
 
       const zoomCenter = {
         x: boxToZoom.x + boxToZoom.width / 2,
         y: boxToZoom.y + boxToZoom.height / 2,
-      };
-      const action = Mirador.actions.updateViewport("known-window-id", {
+      }
+      const action = Mirador.actions.updateViewport('known-window-id', {
         x: zoomCenter.x,
         y: zoomCenter.y,
         zoom: 1 / boxToZoom.width,
-      });
+      })
 
-      miradorInstance.store.dispatch(action);
+      miradorInstance.store.dispatch(action)
     },
   },
-};
+}
 </script>
 <template>
   <v-container>
@@ -106,26 +90,23 @@ export default {
 
     <div class="mb-5">
       <v-select
-        v-model="canvas"
-        :items="canvases"
-        label="Select Canvas"
+          v-model="canvas"
+          :items="canvases"
+          label="Select Canvas"
       ></v-select>
       <v-btn color="primary" @click="zoom">Zoom</v-btn>
       <v-btn color="primary" @click="zoom">表示方向切り替え</v-btn>
     </div>
 
     <div id="mirador" class="mb-10"></div>
-
-    <v-simple-table>
-      <template #default>
-        <tbody>
-          <tr v-for="(item, key) in metadata" :key="key">
-            <th>{{ item.label }}</th>
-            <td>{{ item.value }}</td>
-          </tr>
-        </tbody>
-      </template>
-    </v-simple-table>
+    <v-table>
+      <tbody>
+      <tr v-for="(item, key) in metadata" :key="key">
+        <th>{{ item.label }}</th>
+        <td>{{ item.value }}</td>
+      </tr>
+      </tbody>
+    </v-table>
   </v-container>
 </template>
 <style>
