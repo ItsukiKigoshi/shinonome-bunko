@@ -1,3 +1,15 @@
+<script setup lang="ts">
+  useSeoMeta({
+    title: '東雲文庫/Shinonome Bunko',
+    ogTitle: '東雲文庫/Shinonome Bunko',
+    description:
+      'OCR&Git-powered Kosakuin (Contributor) for Aozora Bunko. / 青空文庫の耕作に貢献するべく，OCR技術を用いたテキスト電子化を試みる極めて私的なプロジェクト．',
+    ogDescription:
+      'OCR&Git-powered Kosakuin (Contributor) for Aozora Bunko. / 青空文庫の耕作に貢献するべく，OCR技術を用いたテキスト電子化を試みる極めて私的なプロジェクト．'
+    // ogImage: 'https://example.com/image.png',
+    // twitterCard: 'summary_large_image',
+  });
+</script>
 <template>
   <NuxtLayout>
     <v-responsive class="border rounded">
