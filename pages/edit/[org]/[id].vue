@@ -16,7 +16,6 @@
       async fetchData() {
         try {
           if (this.cachedResponse.length > 0) {
-            console.log('Using cached response');
             // Use cached response if available
             this.tify.ready.then(() => {
               this.text = this.cachedResponse.find(
@@ -24,7 +23,6 @@
               ).contents;
             });
           } else {
-            console.log('Fetching data from API');
             // Fetch data from API
             const response = await axios.get(
               'https://lab.ndl.go.jp/dl/api/book/fulltext-json/1823865'
@@ -56,7 +54,6 @@
       changePage(num) {
         this.tify.ready.then(() => {
           if (this.tify.options.pages[0] + num > 0) {
-            console.log(this.tify.options.pages[0]);
             this.tify.setPage(this.tify.options.pages[0] + num);
             this.fetchData();
           }
