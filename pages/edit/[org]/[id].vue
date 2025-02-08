@@ -7,7 +7,6 @@
     data() {
       return {
         cachedResponse: {},
-        items: ['master', 'develop'],
         text: '',
         tify: null
       };
@@ -69,9 +68,6 @@
   <v-container>
     <v-row>
       <v-col cols="6">
-        <p v-if="this.tify && this.tify.options.pages">
-          Current Page: {{ this.tify.options.pages[0] }}
-        </p>
         <div id="tify" style="height: 80vh"></div>
         <v-btn @click="changePage(1)">Next</v-btn>
         <v-btn @click="changePage(-1)">Previous</v-btn>
@@ -84,11 +80,20 @@
             readonly
           ></v-text-field>
           <v-text-field
-            label="Title"
-            model-value="蝸牛考 (言語誌叢刊)"
+            label="Title / Author"
+            model-value="蝸牛考 (言語誌叢刊) / 柳田國男"
             readonly
           ></v-text-field>
-          <v-select :items="items" label="Branch"></v-select>
+          <v-text-field
+            label="Page"
+            :model-value="
+              this.tify &&
+              this.tify.options &&
+              this.tify.options.pages &&
+              this.tify.options.pages[0]
+            "
+            readonly
+          ></v-text-field>
           <v-textarea label="Text" :model-value="text"></v-textarea>
           <v-text-field label="Commit Message"></v-text-field>
           <v-btn>Commit</v-btn>
