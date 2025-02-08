@@ -7,6 +7,7 @@
     data() {
       return {
         cachedResponse: {},
+        commitDestination: '',
         text: '',
         tify: null
       };
@@ -38,6 +39,16 @@
               ).contents;
             });
           }
+          this.tify.ready.then(() => {
+            this.commitDestination =
+              'https://github.com/itsukikigoshi/shinonome-storage/blob/main/' +
+              this.$route.params.org +
+              '/' +
+              this.$route.params.id +
+              '/' +
+              this.tify.options.pages[0] +
+              '.txt';
+          });
         } catch (error) {
           console.error('Error fetching data:', error);
         }
@@ -95,9 +106,16 @@
             readonly
           ></v-text-field>
           <v-textarea label="Text" :model-value="text"></v-textarea>
+
           <v-text-field label="Commit Message"></v-text-field>
           <v-btn>Commit</v-btn>
         </form>
+        <p>
+          Commit Destination:
+          <NuxtLink :to="this.commitDestination" target="_blank">
+            {{ this.commitDestination }}
+          </NuxtLink>
+        </p>
       </v-col>
     </v-row>
   </v-container>
