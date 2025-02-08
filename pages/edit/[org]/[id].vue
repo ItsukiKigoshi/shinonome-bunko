@@ -65,8 +65,12 @@
     },
     mounted() {
       this.fetchData();
+      // TODO - Make a function to add manifestUrl based on whether the book is in the NDL or not
       this.tify = new Tify({
-        manifestUrl: 'https://www.dl.ndl.go.jp/api/iiif/1823865/manifest.json',
+        manifestUrl:
+          'https://www.dl.ndl.go.jp/api/iiif/' +
+          this.$route.params.id +
+          '/manifest.json',
         viewer: {
           immediateRender: false
         }
