@@ -24,6 +24,7 @@
             icon="mdi-github"
             target="_blank"
           ></v-btn>
+          <v-btn>Login with GitHub</v-btn>
         </v-app-bar>
         <v-main>
           <NuxtPage />
