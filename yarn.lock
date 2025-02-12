@@ -816,32 +816,6 @@
     unimport "^4.0.0"
     untyped "^1.5.2"
 
-"@nuxt/kit@^3.14.1592":
-  version "3.15.4"
-  resolved "https://registry.npmjs.org/@nuxt/kit/-/kit-3.15.4.tgz#122f511e518573320a035b5e24adf0118d51485d"
-  integrity sha512-dr7I7eZOoRLl4uxdxeL2dQsH0OrbEiVPIyBHnBpA4co24CBnoJoF+JINuP9l3PAM3IhUzc5JIVq3/YY3lEc3Hw==
-  dependencies:
-    c12 "^2.0.1"
-    consola "^3.4.0"
-    defu "^6.1.4"
-    destr "^2.0.3"
-    globby "^14.0.2"
-    ignore "^7.0.3"
-    jiti "^2.4.2"
-    klona "^2.0.6"
-    knitwork "^1.2.0"
-    mlly "^1.7.4"
-    ohash "^1.1.4"
-    pathe "^2.0.2"
-    pkg-types "^1.3.1"
-    scule "^1.3.0"
-    semver "^7.6.3"
-    std-env "^3.8.0"
-    ufo "^1.5.4"
-    unctx "^2.4.1"
-    unimport "^4.0.0"
-    untyped "^1.5.2"
-
 "@nuxt/schema@3.15.3", "@nuxt/schema@^3.15.0":
   version "3.15.3"
   resolved "https://registry.npmjs.org/@nuxt/schema/-/schema-3.15.3.tgz#228dae4ea4a1b406e471aa7cbd53474ec666618a"
@@ -1498,20 +1472,6 @@
   version "10.0.1"
   resolved "https://registry.npmjs.org/@shikijs/vscode-textmate/-/vscode-textmate-10.0.1.tgz#d06d45b67ac5e9b0088e3f67ebd3f25c6c3d711a"
   integrity sha512-fTIQwLF+Qhuws31iw7Ncl1R3HUDtGwIipiJ9iU+UsDUwMhegFcQKQHd51nZjb7CArq0MvON8rbgCGQYWHUKAdg==
-
-"@sidebase/nuxt-auth@^0.10.0":
-  version "0.10.0"
-  resolved "https://registry.npmjs.org/@sidebase/nuxt-auth/-/nuxt-auth-0.10.0.tgz#1d26b8dc2386168439f221ba7d7ec8a245dcb73c"
-  integrity sha512-epAodLKJS7LNclKJ4l6Zs9qkxdhgASll8TourjTInOySCtC29S8nolJ00JxULy7ffBj8HSVoIzFQjPC9LnxxJg==
-  dependencies:
-    "@nuxt/kit" "^3.14.1592"
-    defu "^6.1.4"
-    h3 "^1.13.0"
-    knitwork "^1.1.0"
-    nitropack "^2.10.4"
-    requrl "^3.0.2"
-    scule "^1.3.0"
-    ufo "^1.5.4"
 
 "@sindresorhus/is@^4.6.0":
   version "4.6.0"
@@ -6409,11 +6369,6 @@ requires-port@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
   integrity sha512-KigOCHcocU3XODJxsu8i/j8T9tzT4adHiecwORRQ0ZZFcp7ahwXuRU1m+yuO90C5ZUyGeGfocHDI14M3L3yDAQ==
-
-requrl@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.npmjs.org/requrl/-/requrl-3.0.2.tgz#d376104193b02a2d874dde68454c2db2dfeb0fac"
-  integrity sha512-f3gjR6d8MhOpn46PP+DSJywbmxi95fxQm3coXBFwognjFLla9X6tr8BdNyaIKNOEkaRbRcm0/zYAqN19N1oyhg==
 
 reselect@^4.0.0:
   version "4.1.8"
