@@ -169,6 +169,7 @@
   <v-container>
     <v-row>
       <v-col cols="6">
+        {{ runtimeConfig.public.githubPersonalAccessToken }}
         <div id="tify" style="height: 80vh"></div>
         <v-btn @click="changePage(1)">Next</v-btn>
         <v-btn @click="changePage(-1)">Previous</v-btn>
