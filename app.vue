@@ -17,14 +17,14 @@
         <v-app-bar>
           <v-app-bar-title>
             <NuxtLink to="/">東雲文庫/Shinonome Bunko (Preview)</NuxtLink>
+            <v-btn
+              href="https://github.com/itsukikigoshi/shinonome-bunko"
+              icon="mdi-github"
+              target="_blank"
+            ></v-btn>
           </v-app-bar-title>
           <v-spacer />
           <v-btn>Login with GitHub</v-btn>
-          <v-btn
-            href="https://github.com/itsukikigoshi/shinonome-bunko"
-            icon="mdi-github"
-            target="_blank"
-          ></v-btn>
         </v-app-bar>
         <v-main>
           <NuxtPage />
