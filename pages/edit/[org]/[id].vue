@@ -4,7 +4,14 @@
   import 'tify/dist/tify.css';
   import { Octokit } from '@octokit/rest';
   import { Buffer } from 'buffer';
+  import { useRequestHeaders, useRoute } from '#app';
+  import { onMounted } from 'vue';
+
+  const headers = useRequestHeaders(['cookie']) as HeadersInit;
+  const { data: token } = await useFetch('/api/token', { headers });
   const route = useRoute();
+  const config = useRuntimeConfig();
+
   let tify;
   onMounted(() => {
     tify = new Tify({
@@ -15,6 +22,8 @@
     });
     tify.mount('#tify');
     fetchData();
+    commiterName.value = token.value?.name;
+    commiterEmail.value = token.value?.email;
   });
 
   // Is it a good use case of "let" to declare these variables?
@@ -43,14 +52,16 @@
     default: ''
   });
 
-  const fetchData = () => {
+  const fetchData = async () => {
     try {
+      // TODO - Here, this duplicated function  should be refactored into a shared function
       const owner = 'itsukikigoshi';
       const repo = 'shinonome-storage';
+
       tify.ready.then(async () => {
         const path = `${route.params.org}/${route.params.id}/${tify.options.pages[0]}.txt`;
         const octokit = new Octokit({
-          auth: '' // TODO - Add GitHub OAuth token
+          auth: config.githubPersonalAccessToken
         });
         let file;
         try {
@@ -114,13 +125,15 @@
     });
   };
 
-  const createGitHubCommit = () => {
+  const createGitHubCommit = async () => {
+    // TODO - Here, this duplicated function  should be refactored into a shared function
     const owner = 'itsukikigoshi';
     const repo = 'shinonome-storage';
+
     tify.ready.then(async () => {
       const path = `${route.params.org}/${route.params.id}/${tify.options.pages[0]}.txt`;
       const octokit = new Octokit({
-        auth: '' // TODO - Add GitHub OAuth token
+        auth: config.githubPersonalAccessToken
       });
       let file;
       try {
@@ -135,12 +148,11 @@
         }
         file = null;
       }
-
       const response = await octokit.repos.createOrUpdateFileContents({
         owner: owner,
         repo: repo,
         path: path,
-        content: Buffer.from(text).toString('base64'),
+        content: Buffer.from(text.value).toString('base64'),
         message: commitMessage,
         committer: {
           name: commiterName,
@@ -157,8 +169,8 @@
   };
 </script>
 <template>
-  <p>{{ route.params.id }}</p>
-  <p>Your Name is {{ commiterName }}</p>
+  {{ token }}
+  {{ text }}
   <v-container>
     <v-row>
       <v-col cols="6">
