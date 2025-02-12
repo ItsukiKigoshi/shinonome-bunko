@@ -1,5 +1,4 @@
 <script setup>
-  const { status } = useAuth();
   const { data } = useAuth();
 </script>
 <template>

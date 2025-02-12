@@ -41,8 +41,10 @@ export default defineNuxtConfig({
     }
   ],
   runtimeConfig: {
-    githubPersonalAccessToken: process.env.GITHUB_PERSONAL_ACCESS_TOKEN,
-    authSecret: process.env.NUXT_AUTH_SECRET,
+    public: {
+      githubPersonalAccessToken: process.env.GITHUB_PERSONAL_ACCESS_TOKEN
+    },
+    authSecret: process.env.AUTH_SECRET,
     githubClientId: process.env.GITHUB_CLIENT_ID,
     githubClientSecret: process.env.GITHUB_CLIENT_SECRET
   },

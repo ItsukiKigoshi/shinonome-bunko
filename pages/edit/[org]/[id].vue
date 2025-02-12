@@ -10,7 +10,7 @@
   const headers = useRequestHeaders(['cookie']) as HeadersInit;
   const { data: token } = await useFetch('/api/token', { headers });
   const route = useRoute();
-  const config = useRuntimeConfig();
+  const runtimeConfig = useRuntimeConfig();
 
   let tify;
   onMounted(() => {
@@ -61,7 +61,7 @@
       tify.ready.then(async () => {
         const path = `${route.params.org}/${route.params.id}/${tify.options.pages[0]}.txt`;
         const octokit = new Octokit({
-          auth: config.githubPersonalAccessToken
+          auth: runtimeConfig.public.githubPersonalAccessToken
         });
         let file;
         try {
@@ -80,6 +80,7 @@
         if (file) {
           console.log('file exists');
           const github_response = await axios.get(file.data.download_url);
+          console.log(file.data.download_url);
           console.log(github_response.data);
           text.value = github_response.data;
         } else if (cachedResponse.value.length > 0) {
@@ -133,7 +134,7 @@
     tify.ready.then(async () => {
       const path = `${route.params.org}/${route.params.id}/${tify.options.pages[0]}.txt`;
       const octokit = new Octokit({
-        auth: config.githubPersonalAccessToken
+        auth: runtimeConfig.public.githubPersonalAccessToken
       });
       let file;
       try {
@@ -153,14 +154,14 @@
         repo: repo,
         path: path,
         content: Buffer.from(text.value).toString('base64'),
-        message: commitMessage,
+        message: commitMessage.value,
         committer: {
-          name: commiterName,
-          email: commiterEmail
+          name: commiterName.value,
+          email: commiterEmail.value
         },
         author: {
-          name: commiterName,
-          email: commiterEmail
+          name: commiterName.value,
+          email: commiterEmail.value
         },
         sha: file ? file.data.sha : null
       });
@@ -169,8 +170,6 @@
   };
 </script>
 <template>
-  {{ token }}
-  {{ text }}
   <v-container>
     <v-row>
       <v-col cols="6">
