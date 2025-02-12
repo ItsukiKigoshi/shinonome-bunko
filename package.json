@@ -14,7 +14,6 @@
     "@nuxt/content": "^3.0.1",
     "@nuxtjs/axios": "^5.13.6",
     "@octokit/rest": "^21.1.0",
-    "@sidebase/nuxt-auth": "^0.10.0",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "axios": "^1.7.9",
