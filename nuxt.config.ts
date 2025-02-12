@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     isEnabled: true,
     disableServerSideAuth: false,
     originEnvKey: 'AUTH_ORIGIN',
-    baseURL: 'https://itsukikigoshi.github.io/shinonome-bunko/api/auth',
+    baseURL: 'https://itsukikigoshi.github.io/shinonome-bunko/api/auth', // should be replaced with a domain matching the environment
     provider: {
       type: 'authjs',
       trustHost: false,
