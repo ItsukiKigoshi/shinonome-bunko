@@ -19,9 +19,6 @@ jobs:
       - run: npx nuxt build --preset github_pages
         env:
           NUXT_APP_BASE_URL: /shinonome-bunko/
-          NUXT_AUTH_SECRET: ${{ secrets.NUXT_AUTH_SECRET }}
-          NUXT_GITHUB_CLIENT_ID: ${{ secrets.NUXT_GITHUB_CLIENT_ID }}
-          NUXT_GITHUB_CLIENT_SECRET: ${{ secrets.NUXT_GITHUB_CLIENT_SECRET }}
           NUXT_PUBLIC_GITHUB_PERSONAL_ACCESS_TOKEN: ${{ secrets.NUXT_PUBLIC_GITHUB_PERSONAL_ACCESS_TOKEN }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

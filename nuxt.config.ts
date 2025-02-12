@@ -4,22 +4,6 @@ export default defineNuxtConfig({
   app: {
     baseURL: process.env.NUXT_APP_BASE_URL || '/'
   },
-  auth: {
-    isEnabled: true,
-    disableServerSideAuth: false,
-    originEnvKey: 'AUTH_ORIGIN',
-    baseURL: 'https://itsukikigoshi.github.io/shinonome-bunko/api/auth', // should be replaced with a domain matching the environment
-    provider: {
-      type: 'authjs',
-      trustHost: false,
-      defaultProvider: 'github',
-      addDefaultCallbackUrl: true
-    },
-    sessionRefresh: {
-      enablePeriodically: true,
-      enableOnWindowFocus: true
-    }
-  },
   build: {
     transpile: ['vuetify']
   },
@@ -43,10 +27,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       githubPersonalAccessToken: process.env.GITHUB_PERSONAL_ACCESS_TOKEN
-    },
-    authSecret: process.env.AUTH_SECRET,
-    githubClientId: process.env.GITHUB_CLIENT_ID,
-    githubClientSecret: process.env.GITHUB_CLIENT_SECRET
+    }
   },
   ssr: false, // GitHub Pages is for static sites
   vite: {

@@ -7,8 +7,6 @@
   import { useRequestHeaders, useRoute } from '#app';
   import { onMounted } from 'vue';
 
-  const headers = useRequestHeaders(['cookie']) as HeadersInit;
-  const { data: token } = await useFetch('/api/token', { headers });
   const route = useRoute();
   const runtimeConfig = useRuntimeConfig();
 
@@ -22,8 +20,6 @@
     });
     tify.mount('#tify');
     fetchData();
-    commiterName.value = token.value?.name;
-    commiterEmail.value = token.value?.email;
   });
 
   // Is it a good use case of "let" to declare these variables?

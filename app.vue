@@ -19,7 +19,6 @@
             <NuxtLink to="/">東雲文庫/Shinonome Bunko (Preview)</NuxtLink>
           </v-app-bar-title>
           <v-spacer />
-          <SiginInBtn />
         </v-app-bar>
         <v-main>
           <NuxtPage />
