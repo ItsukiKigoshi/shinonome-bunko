@@ -4,6 +4,22 @@ export default defineNuxtConfig({
   app: {
     baseURL: process.env.NUXT_APP_BASE_URL || '/'
   },
+  auth: {
+    isEnabled: true,
+    disableServerSideAuth: false,
+    originEnvKey: 'AUTH_ORIGIN',
+    baseURL: 'http://localhost:3000/api/auth',
+    provider: {
+      type: 'authjs',
+      trustHost: false,
+      defaultProvider: 'github',
+      addDefaultCallbackUrl: true
+    },
+    sessionRefresh: {
+      enablePeriodically: true,
+      enableOnWindowFocus: true
+    }
+  },
   build: {
     transpile: ['vuetify']
   },
@@ -16,6 +32,7 @@ export default defineNuxtConfig({
   ],
   devtools: { enabled: true },
   modules: [
+    '@sidebase/nuxt-auth',
     (_options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', config => {
         // @ts-expect-error
@@ -23,11 +40,11 @@ export default defineNuxtConfig({
       });
     }
   ],
-  // runtimeConfig: {
-  //   public: {
-  //     githubOauthToken: ''
-  //   }
-  // },
+  runtimeConfig: {
+    authSecret: process.env.NUXT_AUTH_SECRET,
+    githubClientId: process.env.GITHUB_CLIENT_ID,
+    githubClientSecret: process.env.GITHUB_CLIENT_SECRET
+  },
   ssr: false, // GitHub Pages is for static sites
   vite: {
     vue: {

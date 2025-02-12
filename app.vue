@@ -24,7 +24,7 @@
             ></v-btn>
           </v-app-bar-title>
           <v-spacer />
-          <v-btn>Login with GitHub</v-btn>
+          <SiginInBtn />
         </v-app-bar>
         <v-main>
           <NuxtPage />

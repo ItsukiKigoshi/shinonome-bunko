@@ -1,6 +1,11 @@
-<script></script>
+<script setup>
+  const { status } = useAuth();
+  const { data } = useAuth();
+</script>
 <template>
   <v-main>
+    <div v-if="data">Hello {{ data.user.name }}!</div>
+    <div v-else>You are not logged in.</div>
     <v-card class="mx-auto" max-width="344">
       <v-img
         height="200px"
