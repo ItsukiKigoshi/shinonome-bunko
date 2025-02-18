@@ -35,6 +35,14 @@
                 <v-icon>mdi-github</v-icon>
                 GitHub Repository
               </v-btn>
+              <v-btn
+                href="https://www.aozora.gr.jp/aozora-manual/index-input.html"
+                target="_blank"
+                external
+              >
+                <v-icon>mdi-book-open-blank-variant-outline</v-icon>
+                青空文庫作業マニュアル【入力編】
+              </v-btn>
             </v-card-text>
           </v-card>
         </v-footer>
